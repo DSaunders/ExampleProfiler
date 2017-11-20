@@ -3,15 +3,6 @@
 #include "ExampleProfiler.h"
 #include <cstdio>
 
-HRESULT STDMETHODCALLTYPE ExampleProfiler::InitializeForAttach(IUnknown *pICorProfilerInfoUnk, void *pvClientData, UINT cbClientData)
-{
-	pICorProfilerInfoUnk->QueryInterface(__uuidof(ICorProfilerInfo3), (void **)&profilerInfo);
-
-	printf("Profiler Attached\n");
-
-	return S_OK;
-}
-
 ExampleProfiler::ExampleProfiler()
 {
 	refCount = 0;
@@ -27,4 +18,13 @@ ExampleProfiler::~ExampleProfiler()
 		profilerInfo->Release();
 	
 	DeleteCriticalSection(&lock);
+}
+
+HRESULT STDMETHODCALLTYPE ExampleProfiler::InitializeForAttach(IUnknown *pICorProfilerInfoUnk, void *pvClientData, UINT cbClientData)
+{
+	pICorProfilerInfoUnk->QueryInterface(__uuidof(ICorProfilerInfo3), (void **)&profilerInfo);
+
+	printf("Profiler Attached\n");
+
+	return S_OK;
 }
