@@ -1,0 +1,7 @@
+; ExampleProfiler.def : Declares the module parameters.
+
+LIBRARY      "ExampleProfiler.DLL"
+
+EXPORTS
+    DllCanUnloadNow     PRIVATE
+    DllGetClassObject   PRIVATE
