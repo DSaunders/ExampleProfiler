@@ -21,10 +21,8 @@ HRESULT STDMETHODCALLTYPE ExampleProfiler::InitializeForAttach(IUnknown *pICorPr
 	return S_OK;
 }
 
-/* 
-	This is all that is required to implement a callback from the CLR.
-	(note that the implementation of this method in ExampleProfiler.h has been removed)
-*/
+// This is all that is required to implement a callback from the CLR.
+// (note that the implementation of this method in ExampleProfiler.h has been removed)
 STDMETHODIMP ExampleProfiler::GarbageCollectionFinished(void) 
 {
 	printf("Profiler: Garbage Collection\n");
