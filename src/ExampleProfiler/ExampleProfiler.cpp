@@ -7,7 +7,6 @@ ExampleProfiler::ExampleProfiler()
 
 ExampleProfiler::~ExampleProfiler()
 {
-	// Call 'Release' 
 	if (profilerInfo != NULL)
 		profilerInfo->Release();
 }
