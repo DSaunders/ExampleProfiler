@@ -4,7 +4,7 @@ This repository contains the minimum code required to create a profiler for .NET
 
 The example profiler does nothing except write `Profiler Attached` to the standard output of the application it is profiling (the Console, in the case of the example application included).
 
-This code is intended to be used as scaffolding for writing a new CLR profiler and for learning about CLR profilers.
+This code is intended to be used as scaffolding for writing a new CLR profiler and for learning about how these profilers work.
 
 As CLR profilers must be un-managed code, this repository is primarily C++.
 
