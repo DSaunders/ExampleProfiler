@@ -2,7 +2,7 @@
 
 This repository contains the minimum code required to create a profiler for .NET applications.
 
-The example profiler does nothing except write `Profiler Attached` to the standard output of the application it is profiling (the Console, in the case of the example application included).
+The example profiler does nothing except wait for Garbage Collections, and then write a message to the standard output of the application it is profiling (the Console, in the case of the example application included).
 
 This code is intended to be used as scaffolding for writing a new CLR profiler and for learning about how these profilers work.
 
@@ -16,7 +16,7 @@ As CLR profilers must be un-managed code, this repository is primarily C++.
 
 This will set the environment variables in the Console window and launch a sample Console Application.
 
-The Console Application's runtime will load the profiler, which will output `Profiler Attached` to the Console - indicating it has been loaded successfully and is running.
+The Console Application's runtime will load the profiler. Every 2 seconds, the sample application forces a Garbage Collection. The profiler will receive a notification for this, and write `Profiler: Garbage Collection` to the Console.
 
 ## How CLR profilers work
 

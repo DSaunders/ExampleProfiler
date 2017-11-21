@@ -48,7 +48,7 @@ public:
 	STDMETHODIMP ThreadNameChanged(ThreadID threadId, ULONG cchName, WCHAR* name) { return S_OK; };
 	STDMETHODIMP GarbageCollectionStarted(int cGenerations, BOOL generationCollected[], COR_PRF_GC_REASON reason) { return S_OK; };;
 	STDMETHODIMP SurvivingReferences(ULONG cSurvivingObjectIDRanges, ObjectID objectIDRangeStart[], ULONG cObjectIDRangeLength[]) { return S_OK; };
-	STDMETHODIMP GarbageCollectionFinished(void) { return S_OK; };
+	STDMETHODIMP GarbageCollectionFinished(void);  // This is implemented in the .cpp file
 	STDMETHODIMP FinalizeableObjectQueued(DWORD finalizerFlags, ObjectID objectID) { return S_OK; };
 	STDMETHODIMP RootReferences2(ULONG cRootRefs, ObjectID rootRefIds[], COR_PRF_GC_ROOT_KIND rootKinds[], COR_PRF_GC_ROOT_FLAGS rootFlags[], UINT_PTR rootIds[]) { return S_OK; };
 	STDMETHODIMP HandleCreated(GCHandleID handleId, ObjectID initialObjectId) { return S_OK; };

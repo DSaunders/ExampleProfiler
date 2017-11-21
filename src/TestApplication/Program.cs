@@ -2,20 +2,26 @@
 {
     using System;
     using System.Threading;
+    using System.Threading.Tasks;
 
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is sample application. Press the enter key quit.");
+            Console.WriteLine("This is sample application.");
+            Console.WriteLine("It will execute a Garbage Collection every 2 seconds, until you press a key.");
+            Console.WriteLine();
 
-            do
+            Task.Factory.StartNew(() =>
             {
-                while (!Console.KeyAvailable)
+                while (true)
                 {
-                    Thread.Sleep(200);
+                    Thread.Sleep(2000);
+                    GC.Collect();
                 }
-            } while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+            });
+
+            Console.ReadKey();
         }
     }
 }
