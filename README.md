@@ -19,7 +19,7 @@ This will set the environment variables in the Console window and launch a sampl
 
 The Console Application's runtime will load the profiler, which will output `Profiler Attached` to the Console - indicating it has been loaded successfully and is running.
 
-> The example batch file assumes you are running on x64 architecture. If you have compiled the application for x86, mofidy the contents of the batch file to point to the correct output folder
+> Note: The example batch file assumes you are running on x64 architecture. If you have compiled the application for x86, mofidy the contents of the batch file to point to the correct output folder
 
 ## How CLR profilers work
 
