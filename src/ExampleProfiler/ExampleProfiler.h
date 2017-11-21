@@ -2,6 +2,18 @@
 #include <corprof.h>
 #include <corhlpr.h>
 
+/*	
+	This header file also includes the implementation of methods.
+	
+	You do not need to structure your profiler this way, but it is useful in 
+	this example project as it allows us to show only the implementation-specific 
+	code in the .cpp file. This makes it easier to separate the code you need to 
+	write yourself, from the code that is common in every profiler.
+
+	To implement a method, remove the implementation here (e.g. '{ return S_OK; }'),
+	and write the implementation in the .cpp file instead
+ */
+
 class ExampleProfiler : public ICorProfilerCallback3
 {
 public:
@@ -116,7 +128,6 @@ public:
 	STDMETHODIMP ExceptionCLRCatcherExecute(void) { return S_OK; };
 
 private:
-	CRITICAL_SECTION          lock;
-	LONG                      refCount;
-	struct ICorProfilerInfo3* profilerInfo;
+	LONG                      refCount = 0;
+	struct ICorProfilerInfo3* profilerInfo = NULL;
 };

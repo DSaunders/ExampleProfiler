@@ -93,7 +93,7 @@
     <ClInclude Include="ExampleProfiler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="COMStuff.cpp" />
+    <ClCompile Include="COM.cpp" />
     <ClCompile Include="ExampleProfiler.cpp" />
   </ItemGroup>
   <ItemGroup>

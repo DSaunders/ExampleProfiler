@@ -7,7 +7,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Looping. Press the enter key stop.");
+            Console.WriteLine("This is sample application. Press the enter key quit.");
 
             do
             {

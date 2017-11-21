@@ -2,24 +2,26 @@
 
 class __declspec(uuid("{DF9EDC4B-25C1-4925-A3FB-6AAEB3E2FACD}")) ProfilerCLSID;
 
+
+
 //=============================================================
 //  ClassFactory for managing instances of the profiler
 //=============================================================
-class CClassFactory : public IClassFactory
+class ExampleProfilerClassFactory : public IClassFactory
 {
 
 public:
-	CClassFactory() {
-		m_refCount = 0;
+	ExampleProfilerClassFactory() {
+		refCount = 0;
 	}
 
 	ULONG __stdcall  AddRef() {
-		return InterlockedIncrement(&m_refCount);
+		return InterlockedIncrement(&refCount);
 	}
 
 	ULONG __stdcall Release()
 	{
-		auto ret = InterlockedDecrement(&m_refCount);
+		auto ret = InterlockedDecrement(&refCount);
 		if (ret <= 0)
 			delete(this);
 		return ret;
@@ -50,20 +52,20 @@ public:
 		if (NULL != pUnkOuter)
 			return (CLASS_E_NOAGGREGATION);
 
-		ExampleProfiler * pProfilerCallback = new ExampleProfiler();
+		auto * pProfilerCallback = new ExampleProfiler();
 		if (pProfilerCallback == NULL)
 			return E_OUTOFMEMORY;
 		return pProfilerCallback->QueryInterface(riid, ppInterface);
 	}
 
 private:
-	long m_refCount;
+	long refCount;
 
 };
 
 
 //=============================================================
-//  Expose Moethods in DLL
+//  Methods exposed by the DLL
 //=============================================================
 
 BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
@@ -77,7 +79,7 @@ STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID FAR *ppv)
 
 	if (rclsid == __uuidof(ProfilerCLSID))
 	{
-		CClassFactory* pClassFactory = new CClassFactory;
+		auto* pClassFactory = new ExampleProfilerClassFactory;
 		if (pClassFactory == NULL)
 			return E_OUTOFMEMORY;
 		hr = pClassFactory->QueryInterface(riid, ppv);
