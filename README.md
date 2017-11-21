@@ -21,6 +21,8 @@ The Console Application's runtime will automatically load the profiler, the code
 
 Every 2 seconds, the sample application forces a Garbage Collection. The profiler will receive a notification for this, and write `Profiler: Garbage Collection` to the Console.
 
+
+    
 > Note: The example batch file assumes you are running on x64 architecture. If you have compiled the application for x86, modify the contents of the batch file to point to the correct output folder
 
 ## How CLR profilers work
