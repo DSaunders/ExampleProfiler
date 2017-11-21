@@ -25,7 +25,7 @@ Every 2 seconds, the sample application forces a Garbage Collection. The profile
 
 ## How CLR profilers work
 
-A CLR profiler is loaded _into the runtime of the application to be profiled_. It does not run as an external process.
+A CLR profiler is loaded _into the runtime of the application to be profiled_.
 
 Enabling profiling in a .NET application is typically achieved by setting the following environment variables.
 
