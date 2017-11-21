@@ -11,12 +11,15 @@ As CLR profilers must be un-managed code, this repository is primarily C++.
 ## Running the example
 
 - Clone the repository
+- Build the solution
 - Open a new Command Prompt window
 - Run `RunExampleApplication.bat` from the root folder
 
 This will set the environment variables in the Console window and launch a sample Console Application.
 
 The Console Application's runtime will load the profiler. Every 2 seconds, the sample application forces a Garbage Collection. The profiler will receive a notification for this, and write `Profiler: Garbage Collection` to the Console.
+
+> Note: The example batch file assumes you are running on x64 architecture. If you have compiled the application for x86, modify the contents of the batch file to point to the correct output folder
 
 ## How CLR profilers work
 
