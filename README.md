@@ -12,7 +12,7 @@ As CLR profilers must be un-managed code, this repository is primarily C++.
 
 - Clone the repository
 - Open a new Command Prompt window
-- Run `StartExampleApplication.bat` from the `\src\` folder
+- Run `RunExampleApplication.bat` from the root folder
 
 This will set the environment variables in the Console window and launch a sample Console Application.
 
