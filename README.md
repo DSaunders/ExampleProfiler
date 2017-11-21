@@ -42,6 +42,6 @@ The profiler can also modify aspects of the application being profiled. For exam
 
 This code has been assembled through a combination of MSDN documentation and Microsoft's open-source profiler implementations.
 
-- [MSDN Profilng Documentation](https://msdn.microsoft.com/en-us/library/bb384493(v=vs.100).aspx)
+- [MSDN Profiling Documentation](https://msdn.microsoft.com/en-us/library/bb384493(v=vs.100).aspx)
 - [Microsoft Archive - CLR Profiler (Github)](https://github.com/MicrosoftArchive/clrprofiler)
 - [Microsof Perfview (Github)](https://github.com/Microsoft/perfview)
