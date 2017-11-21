@@ -38,14 +38,6 @@ The profiler can also modify aspects of the application being profiled. For exam
 
 > Note: It is possible to attach a profiler to an already running .NET process. In this case, however, the scope of what the profiler can do is severely restricted. For brevity, this sample does not include code for attaching to a running process.
 
-
-## Profiling x86 applications
-
-The default build configuration will compile the Example Profiler DLL for x64 architecture.
-If you wish to profile an x86 application, you must compile the profiler DLL for x86 also - you cannot profile an x86 application with an x64 profiler (or vice-versa).
-
-> Note: In a 'real' profiler, there would be further changes required to support both x86 and x64 architecture. For example, some functions involve writing Assembly Language, which differs between the two architectures.
-
 ## Further reading
 
 This code has been assembled through a combination of MSDN documentation and Microsoft's open-source profiler implementations.
