@@ -17,7 +17,7 @@ As CLR profilers must be un-managed code, this repository is primarily C++.
 
 This will set the environment variables in the Console window and launch a sample Console Application.
 
-The Console Application's runtime will load the profiler. This happens automatically one the environment variables have been set, the code in the Console Application has no knowledge of the profiler.
+The Console Application's runtime will load the profiler. This happens automatically once the environment variables have been set, the code in the Console Application has no knowledge of the profiler.
 
 Every 2 seconds, the sample application forces a Garbage Collection. The profiler will receive a notification for this, and write `Profiler: Garbage Collection` to the Console.
 
