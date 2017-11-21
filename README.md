@@ -2,7 +2,7 @@
 
 This repository contains the minimum code required to create a profiler for .NET applications.
 
-The example profiler does nothing except wait for Garbage Collections, and then write a message to the standard output of the application it is profiling (the Console, in the case of the example application included).
+The example profiler waits for Garbage Collections, and then writes a message to the standard output of the application it is profiling (the Console, in the case of the example application included).
 
 This code is intended to be used as scaffolding for writing a new CLR profiler and for learning about how these profilers work.
 
