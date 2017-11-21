@@ -34,7 +34,7 @@ Setting these in a Command Prompt window will cause any application launched fro
 
 Once the application to be profiled is launched, the CLR will locate the profiler DLL and attempt to load it. If successful, the profiler can subscribe for callbacks when significant events occur (Entering/Leaving methods, Garbage Collections etc.).
 
-The profiler can also modify aspects of the application under profile. For example, it is possible to subscribe to callbacks that allow you to modify the code in a method.
+The profiler can also modify aspects of the application being profiled. For example, it is possible to subscribe to callbacks that allow you to modify the code in a method.
 
 > Note: It is possible to attach a profiler to an already running .NET process. In this case, however, the scope of what the profiler can do is severely restricted. For brevity, this sample does not include code for attaching to a running process.
 
